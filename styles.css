@@ -1,0 +1,125 @@
+html {
+	--offset: 10px;
+}
+.container {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.container-book{
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% / 12 * 2 - var(--offset));
+    box-shadow: 0 0 5px 5px rgba(221, 221, 221, 1);
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    word-wrap:break-word;
+
+   
+}
+.container-button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  
+    border-top: 1px solid rgb(109, 107, 107);
+    
+
+
+}
+button{
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    justify-content: center;
+    
+}
+.container-button-border{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    align-items: center;
+    height: 30px;
+    border-right: 0px solid rgb(109, 107, 107);
+    width: 50%;
+    
+    
+}
+.container-button-delet{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+    align-items: center;
+    height: 30px;
+    border-left: 1px solid rgb(109, 107, 107);
+    width: 50%;
+    
+    
+}
+.author{
+    background-color: rgb(118, 182, 234);
+    border-radius: 3px;
+    display:inline-block;
+    text-align: center;
+    word-wrap:break-word;
+    padding: 5px;
+    
+}
+h1{
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+img{
+    width: 120px;
+    
+    margin: 0 auto;
+}
+.container-book-img{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+@media (max-width: 600px){
+
+	.container {
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-book{
+        margin-top: 25px;
+        margin-bottom: 25px;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% / 12 * 6 - var(--offset));
+        box-shadow: 0 0 5px 5px rgba(221, 221, 221, 1);
+        border-radius: 10px;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        word-wrap:break-word;
+    
+       
+    }
+
+}
