@@ -37,7 +37,7 @@ const books = [
         <div class='container-book'>
           <div class='container-book-img' >
               <img src='${book.image}' >
-              <h1>${book.title}</h1>
+              <h2>${book.title}</h2>
               <p>${book.year}</p>
           </div>
            <div class= 'author' >
