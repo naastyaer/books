@@ -1,21 +1,30 @@
 html {
 	--offset: 10px;
 }
+* {
+	/* включает внутренние отступы и границы в ширину блока, установленную через свойство width */
+	box-sizing: border-box;
+}
+
 .container {
+    max-width: 1200px;
+	margin: 0 auto;
+    flex-wrap: wrap;
     margin-top: 70px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px;
 }
 .container-book{
-    height: 350px;
+    margin-bottom: 80px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: calc(100% / 12 * 2 - var(--offset));
+    width: calc(100% / 12 * 3 - var(--offset));
     box-shadow: 0 0 5px 5px rgba(221, 221, 221, 1);
     border-radius: 10px;
     text-align: center;
@@ -81,9 +90,7 @@ button{
 h1{
     font-weight: 600;
     font-size: 48px;
-    margin-top: 50px;
-    margin-left: 120px;
-    margin-bottom: 10px;
+    
 }
 h2{
     font-weight: 600;
@@ -103,6 +110,76 @@ img{
     justify-content: space-around;
     
 }
+.button-add{
+    background-color: rgb(118, 182, 234);
+    padding: 20px 30px;
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: 20px;
+
+}
+.button-add:hover {
+    background-color:rgb(190, 224, 252);
+    transition: 1s;
+}
+header{
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-form{
+    margin-top: 70px;
+    margin-top: 30px;
+    display: none;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+input{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border: none;
+    height: 30px;
+    background-color: #fff;
+    border-bottom: 2px solid rgb(118, 182, 234);
+    background-color: rgb(221, 221, 221);
+    opacity: 30%;
+    border-radius: 5px;
+    /*transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;*/
+}
+.button-save{
+    margin-top: 15px;
+    background-color: rgb(190, 224, 252);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: 20px;
+
+}
+.button-save:hover {
+    background-color:rgb(118, 182, 234);
+    transition: 1s;
+}
+.title{
+    margin-top: 70px;
+    border: 2px solid rgb(118, 182, 234);
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.input-form_margin{
+    margin-top:70px;
+}
+
 @media (max-width: 600px){
 
 	.container {
@@ -114,7 +191,7 @@ img{
     .container-book{
         margin-top: 25px;
         margin-bottom: 25px;
-        height: 350px;
+        height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -127,6 +204,30 @@ img{
         word-wrap:break-word;
     
        
+    }
+    header{
+        flex-direction: column;
+
+    }
+    h1 {
+        font-weight: 600;
+        font-size: 48px;
+        text-align: center;
+    }
+    .input-form {
+        font-size: 22px;
+    }
+    .input-form_margin {
+        display: flex;
+        flex-direction: column;
+        align-items: center;   
+    }
+    .button-add {
+    padding: 30px 50px;
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: 20px;
+        
     }
 
 }

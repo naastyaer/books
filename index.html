@@ -12,7 +12,27 @@
     </head>
 
     <body>
-        <h1>Книжная полка</h1>
+        <header>
+            <div class="title">
+                <h1>Книжная полка</h1>
+            </div>
+            <div class="input-form_margin">
+                <button class="button-add" onclick="openForm()">Добавить книгу</button>
+                <div id="input-form" class="input-form">
+                    <p>название книги</p>
+                    <input id="title"/>
+                    <p>автор книги</p>
+                    <input id="autor"/>
+                    <p>год издания книги</p>
+                    <input id="year"/>
+                    <p>ссылка на изображение</p>
+                    <input id="img"/>
+                    <button class="button-save" onclick="addBook()">Сохранить</button>
+                </div>
+            </div>
+            
+        </header>
+           
         <div id="container" class="container">
         
             

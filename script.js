@@ -1,17 +1,20 @@
 const books = [
     {
+      id: 0,
       title: 'Design Patterns: Elements of Reusable Object-Oriented Software',
       authors: 'Erich Gamma, John Vlissides, Ralph Johnson, Richard Helm',
       year: '1994',
       image: 'https://images-na.ssl-images-amazon.com/images/I/81gtKoapHFL.jpg'
     },
     {
+      id: 1,
       title: 'JavaScript: The Good Parts',
       authors: 'Douglas Crockford',
       year: '2008',
       image: 'https://images-na.ssl-images-amazon.com/images/I/81kqrwS1nNL.jpg'
     },
     {
+      id: 2,
       title:
       'JavaScript Patterns: Build Better Applications with Coding and Design Patterns',
       authors: 'Stoyan Stefanov',
@@ -19,7 +22,8 @@ const books = [
       image:
       'https://images-na.ssl-images-amazon.com/images/I/51%2BSiphz7AL._SX377_BO1,204,203,200_.jpg'
     },
-    {
+    { 
+      id: 3,
       title:
       'JavaScript: The Definitive Guide: Activate Your Web Pages (Definitive Guides)',
       authors: 'David Flanagan',
@@ -30,6 +34,7 @@ const books = [
     ]
     const container = document.getElementById('container')
     
+  function renderBooks(){
     container.innerHTML= ''
     books.forEach((book) =>{
         container.innerHTML +=  
@@ -48,16 +53,63 @@ const books = [
                 <button>Изменить </button>
               </div>
               <div class='container-button-delet'>
-                <button>Удалить</button>
+                <button onclick="deleteBook(${book.id})">Удалить</button>
               </div>
            </div>
-
-           
-
         </div>
-        `
+       `
     })
+  }
 
+function deleteBook(id){
+  const book = books.find((b) =>{
+    return b.id === id
+  })
+  const bookIndex = books.indexOf(book)
+  books.splice(bookIndex,1)
+  renderBooks()
+
+  
+
+}
+let isOpen = false
+function openForm(){
+    const inputForm = document.getElementById("input-form")
+    if(isOpen){
+      inputForm.style.display = "none"
+        isOpen= false
+    }else{
+      inputForm.style.display = "flex"
+       isOpen= true 
+    }
+    
+    
+}
+function clearForm(){
+  document.getElementById("title").value = ''
+  document.getElementById("autor").value = ''
+  document.getElementById("year").value  = ''
+  document.getElementById("img").value   = ''
+}
+function addBook(){
+  const titleValue = document.getElementById("title").value
+  const autorValue = document.getElementById("autor").value
+  const yearValue = document.getElementById("year").value
+  const imgValue = document.getElementById("img").value
+
+  const book = {
+    title: titleValue,
+    autor: autorValue,
+    year: yearValue,
+    img: imgValue
+  }
+  books.push(book)
+  console.log(books)
+  renderBooks()
+  clearForm()
+  openForm()
+}
+renderBooks()
 
 
     
