@@ -127,6 +127,7 @@ header{
     max-width: 1200px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 70px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -134,21 +135,32 @@ header{
 }
 
 .input-form{
-    margin-top: 70px;
-    margin-top: 30px;
-    display: none;
+    padding: 20px 60px;
+    background-color: white;
+    display: inline-flex;
     flex-direction: column;
+    align-items:  stretch;
     font-weight: 600;
-    font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    
+    font-size: 16px;    
+}
+.add-modal{
+    background-color: rgba(0, 0, 0, 0.27);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 input{
+    color: black;
     padding: 0;
     margin: 0;
     border: 0;
     border: none;
+    width: 350px;
     height: 30px;
     background-color: #fff;
     border-bottom: 2px solid rgb(118, 182, 234);
@@ -164,14 +176,20 @@ input{
     border-radius: 5px;
     font-weight: 300;
     font-size: 20px;
+    margin-right: 10px;
 
 }
 .button-save:hover {
     background-color:rgb(118, 182, 234);
     transition: 1s;
 }
+.input-form-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
 .title{
-    margin-top: 70px;
     border: 2px solid rgb(118, 182, 234);
     border-radius: 5px;
     padding: 10px 20px;
@@ -196,7 +214,7 @@ input{
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        width: calc(100% / 12 * 6 - var(--offset));
+        width: calc(100% / 12 * 8 - var(--offset));
         box-shadow: 0 0 5px 5px rgba(221, 221, 221, 1);
         border-radius: 10px;
         text-align: center;
@@ -206,7 +224,9 @@ input{
        
     }
     header{
+
         flex-direction: column;
+
 
     }
     h1 {
@@ -223,6 +243,7 @@ input{
         align-items: center;   
     }
     .button-add {
+        margin-top: 30px;
     padding: 30px 50px;
     border-radius: 5px;
     font-weight: 300;

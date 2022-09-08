@@ -16,9 +16,9 @@
             <div class="title">
                 <h1>Книжная полка</h1>
             </div>
-            <div class="input-form_margin">
-                <button class="button-add" onclick="openForm()">Добавить книгу</button>
-                <div id="input-form" class="input-form">
+            <button class="button-add" id="button-add">Добавить книгу</button>
+            <div class="add-modal" id="input-form" >
+                <div  class="input-form">
                     <p>название книги</p>
                     <input id="title"/>
                     <p>автор книги</p>
@@ -27,16 +27,20 @@
                     <input id="year"/>
                     <p>ссылка на изображение</p>
                     <input id="img"/>
-                    <button class="button-save" onclick="addBook()">Сохранить</button>
+                    <div class="input-form-button">
+                        <button class="button-save" id="button-save">Сохранить</button>
+                        <button class="button-save" id="button-close">Закрыть</button>
+                    </div>
+                    
                 </div>
+                
             </div>
+                
             
         </header>
-           
+    
         <div id="container" class="container">
-        
             
-
         </div>
     
         

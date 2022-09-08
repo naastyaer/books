@@ -1,4 +1,4 @@
-const books = [
+let books = [
     {
       id: 0,
       title: 'Design Patterns: Elements of Reusable Object-Oriented Software',
@@ -32,8 +32,10 @@ const books = [
       'https://images-na.ssl-images-amazon.com/images/I/51WD-F3GobL._SX379_BO1,204,203,200_.jpg'
     }
     ]
-    const container = document.getElementById('container')
-    
+
+
+/*добавление книг в контейнер*/
+  const container = document.getElementById('container')
   function renderBooks(){
     container.innerHTML= ''
     books.forEach((book) =>{
@@ -53,13 +55,26 @@ const books = [
                 <button>Изменить </button>
               </div>
               <div class='container-button-delet'>
-                <button onclick="deleteBook(${book.id})">Удалить</button>
+                <button id="button-delete-${book.id}" >Удалить</button>
               </div>
            </div>
         </div>
        `
+
     })
+    books.forEach((book) =>{
+      document.getElementById(`button-delete-${book.id}`).addEventListener('click', () => {
+        deleteBook(book.id);
+    })
+     
+  })
+  booksAddToLocalStorage()
   }
+
+function booksAddToLocalStorage(){
+  const booksJSON = JSON.stringify(books)
+  localStorage.setItem('books', booksJSON)
+}
 
 function deleteBook(id){
   const book = books.find((b) =>{
@@ -68,10 +83,10 @@ function deleteBook(id){
   const bookIndex = books.indexOf(book)
   books.splice(bookIndex,1)
   renderBooks()
-
-  
-
+  booksAddToLocalStorage()
 }
+
+
 let isOpen = false
 function openForm(){
     const inputForm = document.getElementById("input-form")
@@ -108,6 +123,18 @@ function addBook(){
   renderBooks()
   clearForm()
   openForm()
+}
+const addButton = document.getElementById('button-add')
+addButton.addEventListener("click",openForm)
+const saveButton = document.getElementById('button-save')
+saveButton.addEventListener("click",addBook)
+const closeButton = document.getElementById('button-close')
+closeButton.addEventListener("click",openForm)
+
+let booksJson = localStorage.getItem('books')
+const savedBooks = JSON.parse(booksJson)
+if(booksJson){
+  books = savedBooks
 }
 renderBooks()
 
