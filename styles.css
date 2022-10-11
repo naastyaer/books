@@ -18,8 +18,9 @@ html {
     padding-right: 10px;
 }
 .container-book{
+
     margin-bottom: 80px;
-    height: 450px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -35,15 +36,20 @@ html {
 }
 .container-button{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-top: 1px solid rgb(109, 107, 107);
+}
+
+.container-button-row{
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100%;
-  
-    border-top: 1px solid rgb(109, 107, 107);
-    
-
-
+    border-bottom:  1px solid rgb(109, 107, 107);
 }
 button{
     padding: 0;
@@ -107,7 +113,8 @@ img{
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    
     
 }
 .button-add{
@@ -133,7 +140,7 @@ header{
     justify-content: space-between;
     align-items: center;
 }
-
+/*модальное окно добавления книги*/
 .input-form{
     padding: 20px 60px;
     background-color: white;
@@ -155,7 +162,7 @@ header{
     align-items: center;
 }
 input{
-    color: black;
+    color: rgb(0, 15, 103);
     padding: 0;
     margin: 0;
     border: 0;
@@ -196,6 +203,48 @@ input{
 }
 .input-form_margin{
     margin-top:70px;
+}
+/*модальное окно добавления книги*/
+/*модальное окно редактирования книги*/
+.edit-modal-background{
+    padding: 20px 60px;
+    background-color: white;
+    display: inline-flex;
+    flex-direction: column;
+    align-items:  stretch;
+    font-weight: 600;
+    font-size: 16px;    
+}
+.edit-modal{
+    background-color: rgba(0, 0, 0, 0.27);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+}
+.title-edit-modal{
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: rgb(118, 182, 234);
+
+}
+.edit-form-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.button_edit_style{
+    color: black;
+    background-color: blue;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 600px){
